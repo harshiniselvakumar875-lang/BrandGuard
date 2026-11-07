@@ -1,0 +1,30 @@
+server:
+  port: ${PORT:${SERVER_PORT:8080}}
+
+spring:
+  datasource:
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+  flyway:
+    enabled: true
+  jackson:
+    default-property-inclusion: non_null
+
+app:
+  jwt-secret: ${JWT_SECRET}
+  jwt-expiration-minutes: ${JWT_EXPIRATION_MINUTES:60}
+  frontend-origin: ${FRONTEND_ORIGIN:${RENDER_EXTERNAL_URL:http://localhost:5173}}
+  seed-users: ${SEED_USERS:false}
+  admin-email: ${ADMIN_EMAIL:admin@brandguard.local}
+  admin-password: ${ADMIN_PASSWORD:}
+  reviewer-email: ${REVIEWER_EMAIL:reviewer@brandguard.local}
+  reviewer-password: ${REVIEWER_PASSWORD:}
+  creator-email: ${CREATOR_EMAIL:creator@brandguard.local}
+  creator-password: ${CREATOR_PASSWORD:}
+  analysis:
+    provider: ${ANALYSIS_PROVIDER:rules}
+  openai:
+    api-key: ${OPENAI_API_KEY:}
+    model: ${OPENAI_MODEL:gpt-4.1-mini}
+    base-url: ${OPENAI_BASE_URL:https://api.openai.com/v1}

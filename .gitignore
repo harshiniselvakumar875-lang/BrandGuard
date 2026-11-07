@@ -1,0 +1,8 @@
+node_modules/
+dist/
+backend/target/
+.env
+.env.*
+!.env.example
+brandguard-ai.zip
+.DS_Store
